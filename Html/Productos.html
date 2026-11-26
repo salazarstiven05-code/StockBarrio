@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockBarrio | Productos</title>
+  <link rel="stylesheet" href="../Css/Style.css">
+  <link rel="stylesheet" href="../Css/Productos.css">
+</head>
+<body data-page="products">
+  <aside class="sidebar">
+    <a class="brand" href="../Index.html"><span class="brand-mark">S</span><span>StockBarrio</span></a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="../Index.html"><span>▦</span> Inicio</a>
+      <a class="active" href="Productos.html"><span>□</span> Productos</a>
+      <a href="AlertasStock.html"><span>♢</span> Alertas</a>
+      <a href="Informes.html"><span>▥</span> Informes</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><p class="eyebrow">Catálogo</p><h1>Productos</h1></div><button class="avatar" type="button" aria-label="Perfil">SB</button></header>
+    <section class="toolbar">
+      <label class="search"><span>⌕</span><input id="productSearch" type="search" placeholder="Buscar producto..."></label>
+      <select id="categoryFilter" aria-label="Filtrar por categoría"><option value="">Todas las categorías</option></select>
+      <button class="button" id="openProductModal" type="button">＋ Nuevo producto</button>
+    </section>
+    <section class="panel">
+      <div class="table-wrap"><table><thead><tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Mínimo</th><th>Estado</th><th></th></tr></thead><tbody id="productsTable"></tbody></table></div>
+    </section>
+  </main>
+
+  <dialog id="productModal" class="modal">
+    <form id="productForm">
+      <div class="modal-heading"><div><p class="eyebrow">Inventario</p><h2 id="modalTitle">Nuevo producto</h2></div><button class="icon-button" id="closeProductModal" type="button" aria-label="Cerrar">×</button></div>
+      <input type="hidden" id="productId">
+      <div class="form-grid">
+        <label>Nombre<input id="productName" required placeholder="Ej. Aceite 1 L"></label>
+        <label>Categoría<input id="productCategory" required list="categoryList" placeholder="Ej. Abarrotes"><datalist id="categoryList"></datalist></label>
+        <label>Precio de venta<input id="productPrice" type="number" min="0" step="0.01" required></label>
+        <label>Cantidad en stock<input id="productStock" type="number" min="0" step="1" required></label>
+        <label>Stock mínimo<input id="productMinimum" type="number" min="0" step="1" required></label>
+      </div>
+      <div class="modal-actions"><button class="button secondary" id="cancelProductModal" type="button">Cancelar</button><button class="button" type="submit">Guardar producto</button></div>
+    </form>
+  </dialog>
+  <script src="../Js/app.js"></script>
+</body>
+</html>

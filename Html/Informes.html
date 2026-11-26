@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockBarrio | Informes</title>
+  <link rel="stylesheet" href="../Css/Style.css">
+  <link rel="stylesheet" href="../Css/Informes.css">
+</head>
+<body data-page="reports">
+  <aside class="sidebar">
+    <a class="brand" href="../Index.html"><span class="brand-mark">S</span><span>StockBarrio</span></a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="../Index.html"><span>▦</span> Inicio</a><a href="Productos.html"><span>□</span> Productos</a><a href="AlertasStock.html"><span>♢</span> Alertas</a><a class="active" href="Informes.html"><span>▥</span> Informes</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><p class="eyebrow">Analítica</p><h1>Informes</h1></div><button class="avatar" type="button" aria-label="Perfil">SB</button></header>
+    <section class="stats" aria-label="Indicadores">
+      <article class="stat-card"><div class="stat-icon blue">□</div><div><span>Unidades totales</span><strong id="reportUnits">0</strong></div></article>
+      <article class="stat-card"><div class="stat-icon green">$</div><div><span>Valor estimado</span><strong id="reportValue">$0</strong></div></article>
+      <article class="stat-card"><div class="stat-icon orange">%</div><div><span>Margen de categorías</span><strong id="categoryCount">0</strong></div></article>
+    </section>
+    <section class="grid-two">
+      <article class="panel"><div class="panel-heading"><div><p class="eyebrow">Distribución</p><h2>Stock por categoría</h2></div></div><div id="categoryChart" class="bar-chart"></div></article>
+      <article class="panel"><div class="panel-heading"><div><p class="eyebrow">Estado</p><h2>Resumen del inventario</h2></div></div><div id="stockSummary" class="summary-list"></div></article>
+    </section>
+  </main>
+  <script src="../Js/app.js"></script>
+</body>
+</html>

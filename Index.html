@@ -4,8 +4,454 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PanelGeneral</title>
+
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="/Css/Style.css">
+
 </head>
 <body>
-    
+
+
+<div class="app-container">
+
+    <!-- NAV: MENÚ LATERAL -------------------------------------------------------------------------------------------------------------------------------------------->
+    <aside class="sidebar" id="sidebar">
+
+        <a href="/Index.html" class="brand">
+            <span class="brand-icon">
+                <i class="bi bi-box-seam"></i>
+            </span>
+            <span>stock de barrio</span>
+        </a>
+
+        <p class="sidebar-description">TU INVENTARIO, AL DÍA</p>
+
+        <p class="nav-title">PRINCIPAL</p>
+
+        <nav class="sidebar-nav">
+
+            <a href="/Index.html" class="nav-link active">
+                <i class="bi bi-grid"></i>
+                <span>Inicio</span>
+            </a>
+
+            <a href="#funcionalidades" class="nav-link">
+                <i class="bi bi-box"></i>
+                <span>Funcionalidades</span>
+            </a>
+
+            <a href="#nosotros" class="nav-link">
+                <i class="bi bi-people"></i>
+                <span>Quiénes somos</span>
+            </a>
+
+        </nav>
+
+        <!-- INFORMACIÓN INFERIOR ------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+                <i class="bi bi-question-circle"></i>
+                <strong>Todo bajo control</strong>
+                <small>Conoce cómo gestionar mejor tu inventario.</small>
+            </div>
+
+            <div class="sidebar-account">
+                <i class="bi bi-shop"></i>
+                <div>
+                    <strong>Stock de Barrio</strong>
+                    <small>Acceso público</small>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENEDOR PRINCIPAL --------------------------------------------------------------------------------------------------------------------------------------------->
+    <div class="main-wrapper">
+
+        <!-- HEADER SUPERIOR -->
+        <header class="topbar">
+
+            <div class="breadcrumb">
+                <button class="mobile-menu" id="menuToggle">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <span>Stock de Barrio</span>
+                <i class="bi bi-chevron-right"></i>
+                <strong>Inicio</strong>
+            </div>
+
+            <div class="topbar-actions">
+
+                <a href="/Html/Login.html" class="login-link">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    Iniciar sesión
+                </a>
+
+                <a href="/Html/Registro.html" class="btn-primary">
+                    <i class="bi bi-person-plus"></i>
+                    Registrarse
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- MAIN: CONTENIDO PRINCIPAL ------------------------------------------------------------------------------------------------------------------------------------>
+        <main class="main-content">
+
+            <!-- SECTION: PRESENTACIÓN -->
+            <section id="inicio" class="hero-section">
+
+                <div class="hero-text">
+
+                    <span class="section-label">
+                        GESTIÓN DE STOCK E INVENTARIO
+                    </span>
+
+                    <h1>
+                        Tu negocio,<br>
+                        <span>en orden.</span>
+                    </h1>
+
+                    <p>
+                        Controla tus productos, registra entradas y
+                        salidas, y mantén tu inventario actualizado
+                        desde un solo lugar.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="/Html/Registro.html" class="btn-primary">
+                            Crear cuenta
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <a href="" class="btn-secondary">
+                            Conocer más
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PANEL DEMOSTRATIVO ----------------------------------------------------------------------------------------------------------------------------------->
+                <div class="preview-card">
+
+                    <div class="preview-header">
+                        <div>
+                            <small>VISTA GENERAL</small>
+                            <h5>Resumen de inventario</h5>
+                        </div>
+
+                        <span class="demo-label">● Demo</span>
+                    </div>
+
+                    <div class="row g-2">
+
+                        <div class="col-4">
+                            <div class="stat-card">
+                                <small>Productos</small>
+                                <strong>128</strong>
+                                <span>En catálogo</span>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="stat-card">
+                                <small>Movimientos</small>
+                                <strong>36</strong>
+                                <span>Este mes</span>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="stat-card">
+                                <small>Alertas</small>
+                                <strong class="warning">4</strong>
+                                <span>Por revisar</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="inventory-chart">
+
+                        <div class="d-flex justify-content-between">
+                            <strong>Estado del inventario</strong>
+                            <small>Datos de ejemplo</small>
+                        </div>
+
+                        <div class="progress-info">
+                            <span>Stock disponible</span>
+                            <strong>72%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width:72%"></div>
+                        </div>
+
+                        <div class="progress-info">
+                            <span>Stock bajo</span>
+                            <strong>18%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar light-blue" style="width:18%"></div>
+                        </div>
+
+                        <div class="progress-info">
+                            <span>Sin stock</span>
+                            <strong>10%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar warning-bar" style="width:10%"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION: BENEFICIOS ------------------------------------------------------------------------------------------------------------------------------------>
+            <section class="quick-points">
+
+                <div>
+                    <i class="bi bi-box-seam"></i>
+                    <span>Productos organizados</span>
+                </div>
+
+                <div>
+                    <i class="bi bi-arrow-left-right"></i>
+                    <span>Movimientos registrados</span>
+                </div>
+
+                <div>
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>Alertas de stock</span>
+                </div>
+
+            </section>
+
+
+            <!-- SECTION: FUNCIONALIDADES ------------------------------------------------------------------------------------------------------------------------------->
+            <section id="funcionalidades" class="content-section">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">HERRAMIENTAS PRINCIPALES</span>
+                        <h2>Gestiona tu inventario</h2>
+                        <p>
+                            Funciones para mantener el control
+                            de los productos de tu negocio.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row g-3">
+
+                    <div class="col-md-6 col-xl-3">
+                        <article class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-box"></i>
+                            </div>
+
+                            <h5>Productos</h5>
+
+                            <p>
+                                Administra tu catálogo, categorías,
+                                precios y cantidades disponibles.
+                            </p>
+
+                            <a href="/Html/Registro.html">
+                                Comenzar <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-md-6 col-xl-3">
+                        <article class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </div>
+
+                            <h5>Movimientos</h5>
+
+                            <p>
+                                Registra entradas, salidas y
+                                reposiciones de productos.
+                            </p>
+
+                            <a href="/Html/Registro.html">
+                                Comenzar <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-md-6 col-xl-3">
+                        <article class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-exclamation-triangle"></i>
+                            </div>
+
+                            <h5>Alertas de stock</h5>
+
+                            <p>
+                                Identifica productos bajo el mínimo
+                                o sin existencias.
+                            </p>
+
+                            <a href="/Html/Registro.html">
+                                Comenzar <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-md-6 col-xl-3">
+                        <article class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-bar-chart-line"></i>
+                            </div>
+
+                            <h5>Informes</h5>
+
+                            <p>
+                                Consulta información sobre ventas,
+                                reposiciones y balance de stock.
+                            </p>
+
+                            <a href="/Html/Registro.html">
+                                Comenzar <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </article>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION: QUIÉNES SOMOS ------------------------------------------------------------------------------------------------------------------------------------>
+            <section id="nosotros" class="about-section">
+
+                <div class="about-text">
+
+                    <span class="section-label">QUIÉNES SOMOS</span>
+
+                    <h2>
+                        Una herramienta para el comercio de barrio.
+                    </h2>
+
+                    <p>
+                        Stock de Barrio es un proyecto orientado a
+                        pequeños y medianos negocios que necesitan
+                        organizar y controlar sus productos e inventario.
+                    </p>
+
+                    <p>
+                        Buscamos centralizar la información de existencias
+                        y movimientos, facilitando el seguimiento del stock
+                        y entregando datos que apoyen la toma de decisiones.
+                    </p>
+
+                    <a href="Html/Registro.html" class="text-action">
+                        Conoce la plataforma
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="about-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-shop"></i>
+                    </div>
+
+                    <h5>Control claro para tu negocio</h5>
+
+                    <p>
+                        Una visión organizada de lo que tienes,
+                        lo que entra y lo que sale.
+                    </p>
+
+                    <div class="about-item">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Información centralizada
+                    </div>
+
+                    <div class="about-item">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Seguimiento de movimientos
+                    </div>
+
+                    <div class="about-item">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Apoyo a la gestión diaria
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION: LLAMADO A LA ACCIÓN ----------------------------------------------------------------------------------------------------------------------------->
+            <section class="bottom-cta">
+
+                <div>
+                    <h4>Empieza a ordenar tu inventario.</h4>
+                    <p>
+                        Registra tu negocio y lleva el control de tu stock.
+                    </p>
+                </div>
+
+                <a href="/Html/Registro.html" class="btn btn-light">
+                    Registrarse
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </section>
+
+
+            <!-- FOOTER -------------------------------------------------------------------------------------------------------------------------------------------------->
+            <footer class="page-footer">
+                <span>Stock de Barrio · Tu negocio, en orden.</span>
+                <span>Proyecto de gestión de stock e inventario</span>
+            </footer>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript propio -->
+<script src="js/app.js"></script>
+
+
 </body>
 </html>

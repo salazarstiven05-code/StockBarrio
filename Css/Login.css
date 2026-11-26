@@ -1,0 +1,605 @@
+
+
+
+/* =========================================
+    BASE DE ESTILOS 
+   Estilos compartidos del proyecto
+========================================= */
+
+/* 1. VARIABLES */
+:root {
+    --sidebar: #0A1223;
+    --sidebar-active: #1A345C;
+    --primary: #183D78;
+    --primary-light: #A9BFE1;
+    --accent: #1490EA;
+
+    --background: #F6F8FB;
+    --white: #FFFFFF;
+
+    --text: #202A3A;
+    --muted: #8793A5;
+    --border: #E8EDF3;
+
+    --warning: #B77A24;
+    --danger: #C95757;
+}
+
+/* 2. CONFIGURACIÓN GENERAL */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 65px;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app-container {
+    min-height: 100vh;
+}
+
+/* 3. SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 188px;
+
+    background: var(--sidebar);
+    color: #AAB8CF;
+
+    padding: 15px 7px 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1050;
+
+    border-right: 3px solid var(--accent);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 6px;
+
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.brand-icon {
+    width: 23px;
+    height: 23px;
+
+    background: #244D87;
+    color: var(--white);
+
+    border-radius: 7px;
+
+    display: grid;
+    place-items: center;
+}
+
+.sidebar-description {
+    font-size: 10px;
+    color: #8A9AB4;
+    margin: 9px 3px 14px;
+}
+
+.nav-title {
+    font-size: 10px;
+    color: #71819C;
+    margin: 0 5px 9px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    height: 28px;
+    padding: 0 8px;
+
+    color: #AAB8CF;
+    font-size: 15px;
+
+    border-radius: 5px;
+    position: relative;
+}
+
+.sidebar-nav .nav-link i {
+    font-size: 15px;
+    width: 11px;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+    background: var(--sidebar-active);
+    color: var(--white);
+}
+
+.sidebar-nav .nav-link.active::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+
+    width: 2px;
+    background: var(--accent);
+}
+
+/* 4. SIDEBAR INFERIOR */
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.sidebar-help {
+    background: #121F36;
+    border-radius: 7px;
+
+    padding: 10px 9px;
+    margin-bottom: 14px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar-help i {
+    font-size: 15px;
+    color: var(--primary-light);
+}
+
+.sidebar-help strong {
+    font-size: 13px;
+    color: #E5EBF4;
+}
+
+.sidebar-help small {
+    font-size: 10px;
+    color: #8E9CB2;
+    line-height: 1.5;
+}
+
+.sidebar-account {
+    border-top: 1px solid #1C2B44;
+    padding: 13px 4px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.sidebar-account > i {
+    width: 21px;
+    height: 21px;
+
+    background: #1A2B48;
+    color: #C5D3E8;
+
+    border-radius: 5px;
+
+    display: grid;
+    place-items: center;
+}
+
+.sidebar-account strong,
+.sidebar-account small {
+    display: block;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.sidebar-account strong {
+    color: #E4EAF3;
+}
+
+.sidebar-account small {
+    color: #8795AA;
+    margin-top: 2px;
+}
+
+/* 5. CONTENEDOR PRINCIPAL */
+.main-wrapper {
+    margin-left: 200px;
+    min-height: 100vh;
+}
+
+/* 6. BARRA SUPERIOR */
+.topbar {
+    height: 80px;
+
+    background: var(--white);
+    border-bottom: 4px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.breadcrumb a {
+    color: var(--muted);
+}
+
+.breadcrumb strong {
+    color: #344054;
+    font-weight: 600;
+}
+
+.breadcrumb i {
+    font-size: 10px;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.topbar-note {
+    color: var(--muted);
+    font-size: 25px;
+}
+
+.login-link {
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.login-link:hover {
+    color: var(--accent);
+}
+
+/* 7. BOTONES GENERALES */
+.btn-primary {
+    background: var(--primary);
+    border: 5px solid var(--primary);
+
+    color: var(--white);
+
+    padding: 10px 14px;
+    border-radius: 5px;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.btn-primary:hover {
+    background: #102F61;
+    color: var(--white);
+}
+
+.btn-secondary,
+.btn-outline-stock {
+    background: var(--white);
+    border: 1px solid #DCE3EC;
+
+    color: var(--primary);
+
+    border-radius: 5px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 9px 20px;
+}
+
+.btn-secondary:hover,
+.btn-outline-stock:hover {
+    background: #011d42;
+    color: var(--primary);
+}
+
+.btn-stock {
+    background: var(--primary);
+    color: var(--white);
+
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+
+    padding: 20px;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.btn-stock:hover {
+    background: #e4e4e4;
+    color: var(--white);
+}
+
+/* 8. ELEMENTOS GENERALES DE SECCIÓN */
+.section-label {
+    color: #60799D;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    padding: 16px 0 7px;
+
+    color: #9AA5B4;
+    font-size: 15px;
+}
+
+/* 9. BOTÓN DE MENÚ MÓVIL */
+.mobile-menu {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    font-size: 19px;
+}
+
+/* 10. RESPONSIVE GENERAL */
+@media (max-width: 760px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform .2s;
+        width: 210px;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-wrapper {
+        margin-left: 0;
+    }
+
+    .mobile-menu {
+        display: inline-grid;
+        place-items: center;
+    }
+
+    .topbar {
+        padding: 0 13px;
+    }
+
+    .topbar-note {
+        display: none;
+    }
+
+    .page-footer {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================
+   STOCK DE BARRIO - LOGIN
+   Página de inicio de sesión
+========================================= */
+
+/* 1. CONTENEDOR DEL FORMULARIO */
+.auth-page {
+    min-height: calc(100vh - 45px);
+    padding: 32px 18px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. TARJETA DE ACCESO */
+.auth-card {
+    width: 100%;
+    max-width: 390px;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    padding: 25px 27px;
+}
+
+/* 3. ENCABEZADO */
+.auth-heading {
+    text-align: center;
+    margin-bottom: 19px;
+}
+
+.auth-icon {
+    width: 37px;
+    height: 37px;
+
+    border-radius: 7px;
+    background: #EEF3FA;
+    color: var(--primary);
+
+    display: grid;
+    place-items: center;
+
+    font-size: 17px;
+    margin: 0 auto 12px;
+}
+
+.auth-heading h1 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.auth-heading p {
+    font-size: 8px;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* 4. CAMPOS DEL FORMULARIO */
+.auth-card .form-label {
+    font-size: 8px;
+    font-weight: 600;
+    color: #526176;
+    margin-bottom: 5px;
+}
+
+.auth-card .form-control,
+.auth-card .input-group-text {
+    height: 34px;
+    border-color: #E3E8EF;
+    font-size: 8px;
+    border-radius: 4px;
+}
+
+.auth-card .input-group-text {
+    background: #F8FAFC;
+    color: #8390A2;
+    padding: 0 9px;
+}
+
+.auth-card .form-control {
+    padding: 7px 9px;
+}
+
+.auth-card .form-control:focus {
+    border-color: #9AAFD0;
+    box-shadow: 0 0 0 .15rem #183D7815;
+}
+
+/* 5. MOSTRAR CONTRASEÑA */
+.password-toggle {
+    cursor: pointer;
+}
+
+/* 6. CHECKBOX */
+.auth-card .form-check-label {
+    font-size: 7.5px;
+    color: #738096;
+}
+
+.auth-card .form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* 7. RECUPERAR CONTRASEÑA */
+.subtle-link {
+    font-size: 7px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* 8. BOTÓN DE ACCESO */
+.btn-stock {
+    background: var(--primary);
+    color: var(--white);
+
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+
+    padding: 9px;
+
+    font-size: 8px;
+    font-weight: 600;
+}
+
+.btn-stock:hover {
+    background: #102F61;
+    color: var(--white);
+}
+
+/* 9. MENSAJES */
+.form-message {
+    font-size: 8px;
+    color: var(--primary);
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* 10. SEPARADOR Y REGISTRO */
+.auth-divider {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    margin: 20px 0 13px;
+}
+
+.auth-divider span {
+    position: relative;
+    top: -7px;
+
+    background: var(--white);
+    padding: 0 9px;
+
+    color: #96A1B0;
+    font-size: 7px;
+}
+
+.btn-outline-stock {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+/* 11. FOOTER */
+.auth-footer {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 18px;
+}
+
+/* 12. RESPONSIVE */
+@media (max-width: 760px) {
+
+    .auth-page {
+        padding: 25px 13px;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .auth-card {
+        padding: 22px 18px;
+    }
+
+}
